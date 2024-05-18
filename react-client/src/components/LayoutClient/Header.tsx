@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 const Header = () =>{
     // const {itemCount} = useCustomers();
     return (
-        <header className="bg-indigo-500 ">
+        <header className="">
             <div className="container mx-auto">
              <div className="header-middle flex justify-between py-5">
                 <div className="logo">
@@ -29,6 +29,9 @@ const Header = () =>{
                         </li>
                         <li>
                             <Link to={`/contact`}>Contact</Link>
+                        </li>
+                        <li>
+                            <Link to={`/login`}>Login</Link>
                         </li>
                     </ul>
                 </nav>
