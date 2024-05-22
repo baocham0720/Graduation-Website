@@ -1,0 +1,102 @@
+.loginpage {
+    background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} 
+
+.login-form-container {
+    background-color: #ffffff;
+    padding: 30px; /* Tăng padding để làm cho form lớn hơn */
+    border-radius: 10px; /* Tăng border-radius cho góc bo tròn */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Tăng độ sắc nét của shadow */
+    width: 360px; /* Tăng kích thước của form */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    margin-bottom: 30px; /* Tăng margin để tách tiêu đề ra khỏi các phần tử khác */
+    color: #00796b;
+    text-align: center;
+    font-size: 28px; /* Tăng kích thước font cho tiêu đề */
+}
+
+.input-group {
+    margin-bottom: 20px; /* Tăng margin giữa các nhóm input */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px; /* Tăng margin giữa label và input */
+    color: #00796b;
+    font-size: 18px; /* Tăng kích thước font cho label */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px; /* Tăng padding cho input */
+    border: 2px solid #00796b; /* Tăng kích thước border */
+    border-radius: 6px; /* Tăng border-radius cho input */
+    background-color: #e0f7fa;
+    font-size: 18px; /* Tăng kích thước font cho input */
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me label {
+    color: #00796b;
+    font-size: 16px; /* Tăng kích thước font cho label */
+}
+
+.forgot-password a {
+    color: #00796b;
+    text-decoration: none;
+    font-size: 16px; /* Tăng kích thước font cho liên kết */
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #00796b;
+    color: #ffffff;
+    padding: 14px; /* Tăng padding cho button */
+    border: 2px solid #004d40;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px; /* Tăng kích thước font cho button */
+    width: 100%;
+}
+
+button:hover {
+    background-color: #004d40;
+    border-color: #002d20;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 30px; /* Tăng margin cho phần đăng ký */
+}
+
+.signup-link a {
+    color: #00796b;
+    text-decoration: none;
+    font-size: 18px; /* Tăng kích thước font cho liên kết đăng ký */
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

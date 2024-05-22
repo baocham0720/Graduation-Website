@@ -1,0 +1,113 @@
+
+.blog-container {
+    max-width: 1200px; /* Tùy chọn: giới hạn chiều rộng của phần chứa blog */
+    margin: 0 auto; /* Căn giữa phần chứa */
+    padding: 20px; /* Tùy chọn: thêm khoảng đệm xung quanh phần chứa */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Điều chỉnh khoảng cách giữa các mục */
+}
+
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-container {
+    
+    padding: 20px; /* Tùy chọn: thêm khoảng đệm bên trong ô hình ảnh */
+    border: 1px solid #ddd; /* Tùy chọn: đường viền xung quanh ô hình ảnh */
+    text-align: center; /* Căn giữa văn bản bên trong ô hình ảnh */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.view-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.view-more-btn:hover {
+    background-color: #0056b3;
+}
+.font {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+
+//banner
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.img-banner {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    
+}
+
+.img-banner img {
+    width: 100%;
+    height: auto; /* Đặt chiều cao tự động để duy trì tỷ lệ khung hình */
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+}
+
+.email-container {
+    position: absolute;
+    bottom: 60px; /* Đặt vị trí khung nhập email cách đáy 20px */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.email-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    max-width: 80%;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.email-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.email-btn:hover {
+    background-color: #0056b3;
+}
+.get {
+    font-size: 24px; /* Kích thước chữ to */
+    font-weight: bold; /* Chữ in đậm */
+}
+
+.get span {
+    color: yellow; /* Màu vàng cho chữ bên trong span */
+    font-weight: bold; /* Tùy chọn: chữ in đậm bên trong span */
+}
+
+
