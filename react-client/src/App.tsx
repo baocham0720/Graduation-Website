@@ -8,6 +8,7 @@ import Product from './pages/Product/Product';
 import LoginPage from './pages/LoginPage/LoginPage';
 import Blog from './pages/Blogs/Blog';
 import About from './pages/About/About';
+import HomePage from './pages/HomePage/HomePage';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LayoutClient />}></Route>
+          <Route path="/home" element={<HomePage/>} />
           <Route path="/product" element={<Product/>} />
           <Route path="/login" element={<LoginPage/>} />
           <Route path="/blog" element={<Blog/>} />
