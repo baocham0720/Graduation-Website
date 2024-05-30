@@ -1,8 +1,7 @@
 import createError from "http-errors";
-import Customer from "../models/customers.model";
-import { ICustomer } from "../types/models";
-import globalConfig from "../constants/config";
-import jwt from "jsonwebtoken";
+import Category from "../models/categories.model";
+import { ICategory } from "../types/models";
+
 //Tra lai ket qua
 const getAll = async (query: any) => {
   //Phân trang
@@ -18,17 +17,17 @@ const getAll = async (query: any) => {
   sortObject = { ...sortObject, [sortBy]: sortType };
 
   //Đếm tổng số record hiện có của collection Product
-  const count = await Customer.countDocuments();
+  const count = await Category.countDocuments();
 
   //Lấy danh sách khớp với điều kiện cần lấy
-  const customers = await Customer.find({})
+  const categories = await Category.find({})
     .select("-__v")
     .sort(sortObject)
     .skip((currentPage - 1) * pageSize)
     .limit(pageSize);
 
   //Số phần tử khớp với điều kiện lọc được
-  const filteredCount = customers.length;
+  const filteredCount = categories.length;
 
   return {
     limit: pageSize, // số lượng item trên 1 trang
@@ -37,61 +36,65 @@ const getAll = async (query: any) => {
     totalItems: count, //tổng số records
     filteredCount, //số record khớp điều kiện
     sortBy: sortObject,
-    customers: customers,
+    categories: categories,
   };
 };
 
-const getCustomerById = async (id: string) => {
-  //SELECT * FROM customers WHERE _id = id
-  const result = await Customer.findById(id);
+const getCategoryById = async (id: string) => {
+  //SELECT * FROM categorys WHERE _id = id
+  const result = await Category.findById(id);
 
   if (!result) {
-    throw createError(404, "Customer not found");
+    throw createError(404, "Category not found");
   }
   return result;
 };
 
-const findCustomer = async (email: string, phone: string) => {
-  const result = await Customer.findOne({
-    $or: [{ email: email }, { phone: phone }],
-  });
+const createCategory = async (data: ICategory) => {
+  const result = await Category.create(data);
   return result;
 };
 
-const createCustomer = async (data: ICustomer) => {
-  console.log("<<=== 🚀  createCustomer ===>>", data);
-  const result = await Customer.create(data);
-  return result;
-};
-
-const updateCustomer = async (id: string, payload: ICustomer) => {
+const updateCategory = async (id: string, data: ICategory) => {
   /* Tận dùng hàm có sẳn để tìm xem danh mục có tồn tại chưa */
-  const customer = await getCustomerById(id);
+  const category = await getCategoryById(id);
 
   /**
    * Dùng assign để merge giữa cũ và mới lại với nhau
    * Sau đó save lại
    * Muốn update trường nào thì chỉ cần update trường đó
    */
-  Object.assign(customer, payload);
-  await customer.save();
+  Object.assign(category, data);
+  await category.save();
 
-  return customer;
+  return category;
 };
 
-const deleteCustomer = async (id: string) => {
-  // const customer = await Customer.findByIdAndDelete(id);
+const deleteCategory = async (id: string) => {
+  //const category = await Category.findByIdAndDelete(id);
   /* Tận dùng hàm có sẳn để tìm xem danh mục có tồn tại chưa */
-  const customer = await getCustomerById(id);
-  await Customer.deleteOne({ _id: customer._id });
-  return customer;
+  const category = await getCategoryById(id);
+  await Category.deleteOne({ _id: category._id });
+  return category;
 };
-
+const countProductsByCategory = async () => {
+  const result = await Category.aggregate([
+    {
+      $lookup: {
+        from: "products",
+        localField: "_id",
+        foreignField: "category._id",
+        as: "productList",
+      },
+    },
+  ]);
+  console.log(result);
+  return result;
+};
 export default {
   getAll,
-  getCustomerById,
-  createCustomer,
-  updateCustomer,
-  deleteCustomer,
-  findCustomer,
+  getCategoryById,
+  createCategory,
+  updateCategory,
+  deleteCategory,
 };

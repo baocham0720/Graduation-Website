@@ -1,5 +1,5 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
-import Staff from "../models/staffs.model";
+import Customer from "../models/customers.model";
 import { Request, Response, NextFunction } from "express";
 import createError from "http-errors";
 import globalConfig from "../constants/config";
@@ -27,42 +27,19 @@ export const authenticateToken = async (
       token,
       globalConfig.JWT_SECRET as string
     ) as decodedJWT;
-    //try verify staff exits in database
-    const staff = await Staff.findById(decoded._id);
+    //try verify Customer exits in database
+    const customer = await Customer.findById(decoded._id);
 
-    console.log("staff authenticateToken", staff);
+    console.log("Customer authenticateToken", customer);
 
-    if (!staff) {
+    if (!customer) {
       return next(createError(401, "Unauthorized"));
     }
-    //Đăng ký biến staff global trong app
-    res.locals.staff = staff;
+    //Đăng ký biến Customer global trong app
+    res.locals.customer = customer;
 
     next();
   } catch (err) {
     return next(createError(403, "Forbidden-authenticateToken"));
   }
-};
-
-//Phân quyền
-export const authorize = (roles: string[] = []) => {
-  // roles param can be a single role string (e.g. Role.Staff or 'Staff')
-  // or an array of roles (e.g. [Role.Admin, Role.Staff] or ['Admin', 'Staff'])
-  if (typeof roles === "string") {
-    roles = [roles];
-  }
-
-  return (req: Request, res: Response, next: NextFunction) => {
-    console.log("res.locals", res.locals);
-
-    if (
-      roles.length &&
-      res.locals.staff.role &&
-      !roles.includes(res.locals.staff.role)
-    ) {
-      return next(createError(403, "Forbidden"));
-    }
-    // authentication and authorization successful
-    next();
-  };
 };
