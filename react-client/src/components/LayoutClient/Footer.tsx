@@ -1,6 +1,22 @@
 const Footer = () => {
     return (
         <footer className="">
+            <section className="relative py-8">
+                <div className="container mx-auto text-center relative">
+                <img src="https://shopo-next.vercel.app/assets/images/discount-banner-1.jpg" alt="" className="w-full h-auto" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <h2 className="text-2xl font-bold mb-4 text-white">Get 20% Off Discount Coupon</h2>
+                    <p className="mb-4 text-white">by Subscribe our Newsletter</p>
+                    <form className="flex justify-center">
+                    <input type="email" placeholder="Email Address" className="p-2 w-64 border border-gray-300 rounded-l" />
+                    <button type="submit" className="bg-blue-500 text-white p-2 rounded-r">Get the Coupon</button>
+                    </form>
+                </div>
+                </div>
+            </section>
+            <div className="flex justify-center items-center ">
+            <img src="https://shopo-next.vercel.app/assets/images/logo.svg" alt="Centered Logo" className=""/>
+            </div>
             <div className="flex  justify-evenly m-20 ">
                 <div>
                     <h6 className="font-bold">About Us</h6>
@@ -38,12 +54,11 @@ const Footer = () => {
 
             <hr />
             <div>
-               <i className="fab fa-facebook"></i>
-               
-                <div>
-                    <span>©2022 <a href="" className="font-bold ">Quomodosoft </a> All rights reserved</span>
+
+                <div className="text-center">
+                    <span>©2024 <a href="" className="font-bold ">Quomodosoft </a> All rights reserved</span>
                 </div>
-                <div></div>
+               
             </div>
         </footer>
     )

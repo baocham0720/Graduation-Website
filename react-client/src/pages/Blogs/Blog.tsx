@@ -1,8 +1,9 @@
-import React from 'react'
+
 import './Blog.css';
 const Blog = () => {
   return (
     <div className="blog-container">
+     
         <h1 className="blog-title">Our Blog</h1>
       <div className='grid-container'>
         <div className="image-container">
@@ -42,16 +43,7 @@ const Blog = () => {
             <a href="https://example.com/blog" className="view-more-btn">View More</a>
         </div>
       </div>
-      
-          <div className='img-banner'>
-              <img src="https://shopo-next.vercel.app/assets/images/discount-banner-1.jpg" alt="" />
-              <div className="email-container">
-                <p className='get'>Get <span> 20%</span> Off Discount Coupon</p>
-                <p>by Subscribe our Newsletter</p>
-                <input type="email" placeholder="EMAIL ADDRESS" className="email-input" />
-                <button className="email-btn">Get the Coupon</button>
-              </div>
-          </div>  
+  
 </div>
 
   )

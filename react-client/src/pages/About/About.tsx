@@ -1,7 +1,8 @@
-import React from 'react'
+
 import './About.css';
 const About = () => {
   return (
+  
     <div className="container ">
       <div>
           <h1 className="blog-title">About Us</h1>
@@ -75,49 +76,56 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div className="feedback-navigation">
-              <button className="nav-button prev-button">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/left.png" alt="Previous" />
-              </button>
-              <button className="nav-button next-button">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/right.png" alt="Next" />
-              </button>
-            </div>
+            
         </div>
-          <div className='img-banner'>
-              <img src="https://shopo-next.vercel.app/assets/images/discount-banner-1.jpg" alt="" />
-              <div className="email-container">
-                <p className='get'>Get <span> 20%</span> Off Discount Coupon</p>
-                <p>by Subscribe our Newsletter</p>
-                <input type="email" placeholder="EMAIL ADDRESS" className="email-input" />
-                <button className="email-btn">Get the Coupon</button>
-              </div>
-          </div>   
+        <section className="relative py-8">
+        <div className="container mx-auto text-center relative">
+          <img src="https://shopo-next.vercel.app/assets/images/discount-banner-1.jpg" alt="" className="w-full h-auto" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h2 className="text-2xl font-bold mb-4 text-white">Get 20% Off Discount Coupon</h2>
+            <p className="mb-4 text-white">by Subscribe our Newsletter</p>
+            <form className="flex justify-center">
+              <input type="email" placeholder="Email Address" className="p-2 w-64 border border-gray-300 rounded-l" />
+              <button type="submit" className="bg-blue-500 text-white p-2 rounded-r">Get the Coupon</button>
+            </form>
+          </div>
+        </div>
+      </section>  
+          
 
+          <div className="flex justify-between bg-yellow-100 p-4 mb-8">
+        <div className="flex items-center">
+          <img src="https://img.icons8.com/ios-filled/50/000000/free-shipping.png" alt="Free Shipping" className="w-12 h-12 mr-2" />
+          <div>
+            <p className="font-bold">Free Shipping</p>
+            <p className="text-xs">When ordering over $100</p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <img src="https://img.icons8.com/ios-filled/50/000000/return.png" alt="Free Return" className="w-12 h-12 mr-2" />
+          <div>
+            <p className="font-bold">Free Return</p>
+            <p className="text-xs">Get Return within 30 days</p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <img src="https://img.icons8.com/ios-filled/50/000000/lock.png" alt="Secure Payment" className="w-12 h-12 mr-2" />
+          <div>
+            <p className="font-bold">Secure Payment</p>
+            <p className="text-xs">100% Secure Online Payment</p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <img src="https://img.icons8.com/ios-filled/50/000000/star.png" alt="Best Quality" className="w-12 h-12 mr-2" />
+          <div>
+            <p className="font-bold">Best Quality</p>
+            <p className="text-xs">Original Product Guaranteed</p>
+          </div>
+        </div>
+      </div>
           {/* info */}
           <div className="info-section">
-            <div className="info-box">
-                <div className="info-item">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/free-shipping.png" alt="Free Shipping" />
-                    <p>Free Shipping</p>
-                    <a>When ordering over $100</a>
-                </div>
-                <div className="info-item">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/return.png" alt="Free Return" />
-                    <p>Free Return</p>
-                    <a>Get Return within 30 days</a>
-                </div>
-                <div className="info-item">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/lock.png" alt="Secure" />
-                    <p>Secure Payment</p>
-                    <a>100% Secure Online Payment</a>
-                </div>
-                <div className ="info-item">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/star.png" alt="Best" />
-                    <p>Best Quality</p>
-                    <a>Original Product Guarenteed</a>
-                </div>
-            </div>
+           
             <div className ="latest-section">
             <p className ="latest-title">My Latest</p>
 
@@ -146,6 +154,7 @@ const About = () => {
 
         
 </div>
+
   )
 }
 
