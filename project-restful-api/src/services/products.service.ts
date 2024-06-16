@@ -260,6 +260,7 @@ const updateProduct = async (id: string, data: IProduct) => {
 const deleteProduct = async (id: string) => {
   //const product = await Product.findByIdAndDelete(id);
   /* Tận dùng hàm có sẳn để tìm xem danh mục có tồn tại chưa */
+
   const product = await getProductById(id);
   await Product.deleteOne({ _id: product._id });
   return product;
