@@ -107,6 +107,9 @@ const productSchema = new Schema(
       type: Date,
       default: new Date(),
     },
+    time: {
+      type: String,
+    },
   },
   {
     timestamps: true,
@@ -140,6 +143,11 @@ productSchema.pre("save", async function (next) {
    * Tự động tạo slug khi slug ko được truyền
    * hoặc slug = ''
    */
+  const now = new Date();
+  const gio = now.getHours().toString().padStart(2, "0");
+  const phut = now.getMinutes().toString().padStart(2, "0");
+  const giay = now.getSeconds().toString().padStart(2, "0");
+  this.time = `${gio}:${phut}:${giay}`;
   if (this.slug == "" || !this.slug) {
     this.slug = buildSlug(this.productName);
   }

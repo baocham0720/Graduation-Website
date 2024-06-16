@@ -10,8 +10,12 @@ import {
 import type { MenuProps } from "antd";
 import { Layout, Menu, theme } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
-const { Header, Footer, Sider, Content } = Layout;
+import { AiOutlineBell, AiOutlineBars } from "react-icons/ai";
 
+import UserInfo from "../Useinfo";
+import Search from "antd/es/input/Search";
+const { Header, Footer, Sider, Content } = Layout;
+import {} from "../../../public/images/vn.png";
 type MenuItem = Required<MenuProps>["items"][number];
 
 function getItem(
@@ -32,10 +36,7 @@ const items: MenuProps["items"] = [
   getItem("Categories", "Categories", <UnorderedListOutlined />),
   getItem("Brands", "Brands", <UnorderedListOutlined />),
   getItem("Products", "Products", <SolutionOutlined />),
-  getItem("Orders", "Orders", <FileOutlined />, [
-    getItem("Thông tin đơn hàng", "g1", null),
-    getItem("Thanh Toán", "g2", null),
-  ]),
+  getItem("Orders", "Orders", <FileOutlined />),
   getItem("Staffs", "Staffs", <UserOutlined />),
   getItem("Setting", "Setting", <SettingFilled />),
 ];
@@ -68,8 +69,40 @@ const App: React.FC = () => {
           }}
         />
       </Sider>
-      <Layout style={{ marginLeft: 200 }}>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+      <Layout
+        style={{
+          marginLeft: 200,
+        }}
+      >
+        <Header
+          style={{
+            background: colorBgContainer,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <AiOutlineBars size={25} />
+          <Search placeholder="search" style={{ width: 400 }} enterButton />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "40px",
+            }}
+          >
+            <img
+              src="../../../public/images/vn.png"
+              width={40}
+              height={25}
+              alt="vn"
+            />
+            <AiOutlineBell size={"25px"} />
+            <UserInfo />
+          </div>
+        </Header>
+
         <Content
           style={{
             margin: "16px",
@@ -77,18 +110,19 @@ const App: React.FC = () => {
             minHeight: 280,
             background: colorBgContainer,
             overflow: "initial",
+            marginBottom: "50px",
           }}
         >
           <Outlet />
         </Content>
         <Footer
-          style={{
-            textAlign: "center",
-            position: "fixed",
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
+        // style={{
+        //   textAlign: "center",
+        //   position: "fixed",
+        //   left: 0,
+        //   right: 0,
+        //   bottom: 0,
+        // }}
         >
           Ant Design ©{new Date().getFullYear()} Created by Ant DAU
         </Footer>
