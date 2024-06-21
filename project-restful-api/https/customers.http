@@ -1,0 +1,9 @@
+POST http://localhost:9000/api/v1/customers
+Content-Type: application/json
+
+{
+      "email":"hoangbaotram0720@gmail.com",
+      "password":"Hbtram123@",
+      "phone":"0790763323",
+      "address":"183/17 Phan Thanh Đà Nẵng"
+}

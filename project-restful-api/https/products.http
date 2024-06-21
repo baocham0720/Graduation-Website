@@ -1,0 +1,15 @@
+POST http://localhost:9000/api/v1/products
+Content-Type: application/json
+
+{
+    "productName": "Samsung Galaxy ES9",
+    "description": "Road bike for paved roads",
+    "price": 1500,
+    "modelYear": "2023",
+    "category": "664b405ef273dee2be3b1953",
+    "brandId": "664b442031f48b02bb6ba984"
+}
+
+###
+
+GET http://localhost:9000/api/v1/products

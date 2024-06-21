@@ -7,7 +7,7 @@ import Product from './pages/Product/Product';
 import LoginPage from './pages/LoginPage/LoginPage';
 import Blog from './pages/Blogs/Blog';
 import About from './pages/About/About';
-import HomePage from './pages/HomePage/HomePage';
+import HomePage from './pages/HomePage/homepage';
 import Register from './pages/Register/Register';
 import ContactPage from './pages/Contact/ContactPage';
 import Page from './pages/PageHome/Pages'; 
