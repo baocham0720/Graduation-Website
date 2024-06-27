@@ -26,7 +26,7 @@ const Register = () => {
       <div id="error-message" className="text-red-500 mt-4 hidden">Vui lòng kiểm tra thông tin của bạn.</div>
       <div className="text-center mt-4">
         <span className="text-gray-700">Đã có tài khoản? </span>
-        <a href="#" className="text-blue-500">Đăng nhập ngay</a>
+        <a href="/login" className="text-blue-500">Đăng nhập ngay</a>
       </div>
     </div>
   </div>

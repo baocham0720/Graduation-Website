@@ -113,7 +113,7 @@ const HomePage = () => {
           <div className="relative">
             <img src="https://shopo-next.vercel.app/assets/images/campaign-cover-countdown.jpg" alt="Google Play" className="mr-2" />
             <h2 className="text-4xl font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">WOO! Flash Sale</h2>
-            <button className="absolute top-3/4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white px-4 py-2 rounded mt-4">Shop Now</button>
+            <button className="absolute top-3/4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white px-4 py-2 rounded mt-4"> <Link to="/details">Shop Now</Link></button>
           </div>
           <div className="relative">
             <img src="https://shopo-next.vercel.app/assets/images/download-app-cover.png" alt="App Store" />
